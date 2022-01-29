@@ -2,14 +2,17 @@ name: publish-docker-image
 
 on:
   push:
+    paths: Dockerfile
     branches: latest
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+
     permissions:
       packages: write
       contents: read
+
     steps:
       - uses: actions/checkout@v2
       
@@ -37,4 +40,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-
