@@ -2,8 +2,10 @@ name: publish-docker-image
 
 on:
   push:
-    paths: Dockerfile
-    branches: latest
+    paths:
+      - Dockerfile
+    branches:
+      - latest
 
 jobs:
   build-and-push:
