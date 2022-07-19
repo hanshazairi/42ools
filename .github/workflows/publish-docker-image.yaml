@@ -36,7 +36,7 @@ jobs:
             hanshazairi/42ools
             ghcr.io/${{ github.repository }}
       
-      - uses: docker/build-push-action@v2.10.0
+      - uses: docker/build-push-action@v3.1.0
         with:
           context: .
           push: true
